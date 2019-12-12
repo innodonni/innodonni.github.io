@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Sola Curator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="interpreter/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="interpreter/parchment.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="interpreter/parchment.min.css">
+	<script>
+		parchment_options = {
+			default_story: [ "interpreter/story.zblorb.js" ],
+			lib_path: 'interpreter/',
+			lock_options: 1,
+			lock_story: 1,
+			page_title: 0
+		};
+
+$(document).ready(function() { 
+  // Licensed under CC-BY-SA 4.0 from StackOverflow user Iman Sedighi
+  // https://stackoverflow.com/a/38550335
+  $('#gameport').on('touchstart', function() {
+      detectTap = true; //detects all touch events
+  });
+  $('#gameport').on('touchmove', function() {
+      detectTap = false; //Excludes the scroll events from touch events
+  });
+  $('#gameport').on('click touchend', function(event) {
+      if (event.type == "click") detectTap = true; //detects click events 
+         if (detectTap) {
+           $('input').focus();
+         }
+  });
+});
+	</script>
+</head><body>
+<div id="about">
+	<h1>Parchment</h1>
+	<p>is an interpreter for Interactive Fiction. <a href="http://parchment.googlecode.com">Find out more.</a></p>
+	<noscript><p>Parchment requires Javascript. Please enable it in your browser.</p></noscript>
+</div>
+<div id="parchment"></div>
+<script>
+</script>
+</body></html>
