@@ -1,4 +1,4 @@
-# innodonni.github.io
+# Sola Curator demo available for beta testing
 
 [Play Sola Curator on the web here](play.html).
 
