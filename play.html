@@ -5,11 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="interpreter/glkote.css" type="text/css">
 <link rel="stylesheet" href="interpreter/dialog.css" type="text/css">
-<script src="interpreter/jquery-1.12.4.min.js" type="text/javascript"></script>
-<script src="interpreter/glkote.min.js" type="text/javascript"></script>
-<script src="interpreter/quixe.min.js" type="text/javascript"></script>
 
-<script src="interpreter/resourcemap.js" type="text/javascript"></script>
+<style type="text/css">
+
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+#gameport {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #CCAA88;
+  margin: 0px;
+}
+
+</style>
+
+<script src="interpreter/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="src/glkote/glkote.js" type="text/javascript"></script>
+<script src="src/glkote/dialog.js" type="text/javascript"></script>
+<script src="src/glkote/glkapi.js" type="text/javascript"></script>
+<script src="src/quixe/quixe.js" type="text/javascript"></script>
+<script src="src/quixe/gi_dispa.js" type="text/javascript"></script>
+<script src="src/quixe/gi_load.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 do_vm_autosave = false;
@@ -39,27 +60,20 @@ $(document).ready(function() {
            $('input').focus();
          }
   });
+
+  qparams = GiLoad.get_query_params();
+  gameurl = qparams["story"];
+  if (!gameurl || !/versions\/demo-[0-9]{6}\.blorb\.js/.test(gameurl))
+    gameurl = "interpreter/story.blorb.js";
+
+  game_options.default_story = gameurl;
+  GiLoad.load_run(game_options);
 });
 </script>
 
-<script src="interpreter/story.blorb.js" type="text/javascript"></script>
+</head>
+<body>
 
-<style type="text/css">
-body {
-  margin: 0px;
-  height: 100%;
-}
-
-#gameport {
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  background: #CCAA88;
-  margin: 0px;
-}
-</style>
-</head><body>
 <div id="gameport">
 <div id="windowport">
 <noscript><hr>
@@ -72,4 +86,6 @@ body {
 </div>
 <div id="errorpane" style="display:none;"><div id="errorcontent">...</div></div>
 </div>
-</body></html>
+
+</body>
+</html>

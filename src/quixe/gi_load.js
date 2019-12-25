@@ -1004,7 +1004,8 @@ return {
     get_metadata: get_metadata,
     get_debug_info: get_debug_info,
     get_image_info: get_image_info,
-    get_image_url: get_image_url
+    get_image_url: get_image_url,
+    get_query_params: get_query_params
 };
 
 }();
