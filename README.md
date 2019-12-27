@@ -8,6 +8,6 @@
 
 ## Old versions (saved games are not compatible with newer versions)
 
-* 191225 [Online](play.html?story=versions/demo-191225.blorb.js) [Z-Machine](demo-191225.z5) [Glulx](demo-191225.blb)
+* 191225 [Online](play.html?story=versions/demo-191225.blorb.js) [Z-Machine](versions/demo-191225.z5) [Glulx](versions/demo-191225.blb)
 
-* 191218 [Online](play.html?story=versions/demo-191218.blorb.js) [Z-Machine](demo-191218.z5) [Glulx](demo-191218.blb)
+* 191218 [Online](play.html?story=versions/demo-191218.blorb.js) [Z-Machine](versions/demo-191218.z5) [Glulx](versions/demo-191218.blb)
